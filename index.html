@@ -13,13 +13,26 @@
       line-height: 1.6;
       color: #222;
     }
-    header {
-      background: #5b2d8b;
-      color: #fff;
-      padding: 40px 20px;
+    header { padding: 0; }
+    .hero {
+      background: linear-gradient(rgba(91,45,139,0.55), rgba(0,0,0,0.55)), url('atlanta-stl-skyline.png') center/cover no-repeat;
+      min-height: 420px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
     }
-    header h1 { margin-bottom: 10px; }
+    .overlay { padding: 40px 20px; }
+    .logo { max-width: 180px; margin-bottom: 15px; }
+    .hero h1 { color: #fff; margin-bottom: 5px; }
+    .subtitle { color: #eee; }
+    .tagline { color: #fff; font-weight: bold; margin-top: 10px; }
+    .phone { color: #fff; font-weight: bold; margin-top: 10px; }
+    @media (max-width: 768px) {
+      .hero { min-height: 300px; }
+      .logo { max-width: 140px; }
+      .hero h1 { font-size: 1.6rem; }
+    }
     nav {
       background: #6a35a6;
       padding: 10px;
@@ -31,7 +44,6 @@
       text-decoration: none;
       font-weight: bold;
     }
-    nav a:hover { text-decoration: underline; }
     section {
       padding: 60px 20px;
       max-width: 1000px;
@@ -64,10 +76,16 @@
 </head>
 <body>
 
-<header>
-  <img src="logo.png" alt="Gregory Appraisals Logo" style="max-width:180px;margin-bottom:15px;" />
-  <h1>Gregory Appraisals, LLC</h1>
-  <p>Certified General Real Property Appraiser | Georgia</p>
+<header style="background:#5b2d8b;padding:0;">
+  <div class="hero">
+    <div class="overlay">
+      <img src="logo.png" alt="Gregory Appraisals Logo" class="logo" />
+      <h1>Gregory Appraisals, LLC</h1>
+      <p class="subtitle">Certified General Real Property Appraiser | Georgia</p>
+      <p class="tagline">Commercial • Residential • Eminent Domain • Complex Assignments</p>
+      <p class="phone">📞 678-250-5244</p>
+    </div>
+  </div>
 </header>
 
 <nav>
