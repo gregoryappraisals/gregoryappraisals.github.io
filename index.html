@@ -3,222 +3,721 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gregory Appraisals, LLC | Certified General Appraiser | Georgia</title>
-  <meta name="description" content="Georgia commercial, residential, eminent domain, and complex real estate appraisals by a Certified General Real Property Appraiser." />
-  <meta name="keywords" content="Georgia commercial appraiser, certified general appraiser Georgia, eminent domain appraiser Georgia, residential appraiser Georgia, complex real estate appraisal" />
+  <title>Gregory Appraisals, LLC | Real Estate Value That Holds Up Under Scrutiny</title>
+  <meta name="description" content="Independent Georgia real property valuation for attorneys, fiduciaries, government agencies, property owners, and other professionals. Commercial, litigation, estate, eminent domain, tax appeal, land, and complex assignments." />
+  <meta name="keywords" content="Georgia commercial appraiser, certified general appraiser Georgia, litigation appraiser Georgia, eminent domain appraiser Georgia, estate appraisal Georgia, property tax appeal Georgia, complex real estate appraisal" />
 
   <style>
+    :root {
+      --purple: #5b2d8b;
+      --purple-dark: #3f1f62;
+      --purple-light: #eee7f5;
+      --ink: #202124;
+      --muted: #5f6368;
+      --light: #f7f7f9;
+      --white: #fff;
+      --border: #e1e1e6;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.6;
-      color: #222;
+      line-height: 1.65;
+      color: var(--ink);
+      background: var(--white);
     }
 
-    /* HERO */
-    header {
-      padding: 0;
-    }
-    .hero {
-      background: linear-gradient(rgba(91,45,139,0.6), rgba(0,0,0,0.6)), url('atlanta-stl-skyline.png') top center/cover no-repeat;
-      min-height: 420px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 60px 20px 40px 20px;
-    }
-    .hero h1 {
-      color: #fff;
-      margin-bottom: 8px;
-      font-size: 2.4rem;
-    }
-    .hero .subtitle {
-      color: #eee;
-      font-size: 1.1rem;
-    }
-    .hero .tagline {
-      color: #fff;
-      font-weight: bold;
-      margin-top: 14px;
-    }
-    .hero .phone {
-      color: #fff;
-      font-weight: bold;
-      margin-top: 14px;
-      font-size: 1.1rem;
-    }
+    a { color: var(--purple); }
+    h1, h2, h3 { line-height: 1.2; }
+    h2 { font-size: 2rem; margin: 0 0 18px; }
+    p { margin-top: 0; }
 
-    @media (max-width: 768px) {
-      .hero {
-        min-height: 300px;
-      }
-      .hero h1 {
-        font-size: 1.7rem;
-      }
+    .container {
+      width: min(1100px, calc(100% - 40px));
+      margin: auto;
     }
 
     /* NAV */
     nav {
-      background: #6a35a6;
-      padding: 12px;
-      text-align: center;
+      background: var(--purple);
+      padding: 12px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      box-shadow: 0 2px 10px rgba(0,0,0,.12);
     }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
     nav a {
       color: #fff;
-      margin: 0 15px;
+      margin: 0 6px;
       text-decoration: none;
+      font-weight: 700;
+      font-size: .94rem;
+    }
+
+    .nav-cta {
+      background: #fff;
+      color: var(--purple) !important;
+      padding: 8px 14px;
+      border-radius: 5px;
+    }
+
+    /* HERO */
+    header { padding: 0; }
+
+    .hero {
+      background:
+        linear-gradient(rgba(63,31,98,.72), rgba(0,0,0,.64)),
+        url('atlanta-stl-skyline.png') center/cover no-repeat;
+      min-height: 520px;
+      display: flex;
+      align-items: center;
+      padding: 75px 20px;
+    }
+
+    .hero-content {
+      width: min(1100px, 100%);
+      margin: auto;
+      color: #fff;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      font-size: .86rem;
+      margin-bottom: 16px;
+      opacity: .95;
+    }
+
+    .hero h1 {
+      max-width: 780px;
+      color: #fff;
+      margin: 0 0 18px;
+      font-size: clamp(2.4rem, 6vw, 4.3rem);
+    }
+
+    .hero .subtitle {
+      max-width: 760px;
+      color: #f1edf5;
+      font-size: 1.18rem;
+      margin-bottom: 18px;
+    }
+
+    .hero .tagline {
+      color: #fff;
       font-weight: bold;
+      margin: 0 0 26px;
+      font-size: 1rem;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 13px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 700;
+      border: 2px solid #fff;
+    }
+
+    .button.primary {
+      background: #fff;
+      color: var(--purple);
+    }
+
+    .button.secondary {
+      color: #fff;
+      background: transparent;
+    }
+
+    /* CREDIBILITY STRIP */
+    .credibility {
+      background: #f2eef6;
+      border-bottom: 1px solid var(--border);
+      padding: 18px 20px;
+    }
+
+    .credibility-inner {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: center;
+      gap: 14px 28px;
+      flex-wrap: wrap;
+      font-weight: 700;
+      color: var(--purple-dark);
+      text-align: center;
     }
 
     /* SECTIONS */
     section {
-      padding: 60px 20px;
-      max-width: 1000px;
-      margin: auto;
+      padding: 70px 20px;
     }
 
-    .services {
+    .section-intro {
+      max-width: 760px;
+      color: var(--muted);
+      margin-bottom: 30px;
+    }
+
+    .section-label {
+      color: var(--purple);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      font-weight: 700;
+      font-size: .82rem;
+      margin-bottom: 8px;
+    }
+
+    .light-section { background: var(--light); }
+
+    /* GRID CARDS */
+    .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 20px;
     }
 
     .card {
-      border: 1px solid #ddd;
-      padding: 22px;
-      border-radius: 8px;
-      background: #fafafa;
+      border: 1px solid var(--border);
+      padding: 26px;
+      border-radius: 9px;
+      background: #fff;
+      box-shadow: 0 5px 18px rgba(30,20,40,.05);
     }
 
-    .cta {
-      background: #f4f6f8;
-      border-left: 5px solid #5b2d8b;
+    .card h3 {
+      margin: 0 0 9px;
+      color: var(--purple-dark);
+      font-size: 1.18rem;
+    }
+
+    .card p { color: var(--muted); margin-bottom: 0; }
+
+    .card .icon {
+      font-size: 1.7rem;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    /* SITUATIONS */
+    .situation {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 18px;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+      padding: 20px 0;
+    }
+
+    .situation:last-child { border-bottom: 0; }
+
+    .situation strong { display: block; font-size: 1.08rem; margin-bottom: 4px; }
+    .situation span { color: var(--muted); }
+
+    .arrow {
+      font-weight: 700;
+      color: var(--purple);
+      white-space: nowrap;
+    }
+
+    /* WHY */
+    .why-card {
+      background: var(--purple);
+      color: #fff;
+      border-radius: 10px;
       padding: 30px;
-      margin-top: 40px;
     }
 
-    /* CONTACT FORM */
+    .why-card h3 { color: #fff; }
+    .why-card p { color: #eee7f5; }
+
+    /* FEATURE */
+    .feature {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .feature-box {
+      background: var(--purple-light);
+      border-radius: 12px;
+      padding: 34px;
+      border-left: 6px solid var(--purple);
+    }
+
+    .feature-box ul { padding-left: 20px; }
+
+    /* PROCESS */
+    .step-number {
+      color: var(--purple);
+      font-size: 1.9rem;
+      font-weight: 800;
+    }
+
+    /* CTA */
+    .cta {
+      background: var(--purple);
+      color: #fff;
+      padding: 42px;
+      border-radius: 12px;
+      margin-top: 36px;
+    }
+
+    .cta h2, .cta p { color: #fff; }
+    .cta a { color: #fff; }
+
+    /* CONTACT */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    form {
+      background: var(--light);
+      padding: 28px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+    }
+
     form input,
     form textarea {
       width: 100%;
-      padding: 10px;
+      padding: 12px;
       margin-bottom: 12px;
       border: 1px solid #ccc;
       border-radius: 5px;
+      font: inherit;
     }
+
     form button {
-      background: #5b2d8b;
+      background: var(--purple);
       color: #fff;
-      padding: 12px 22px;
+      padding: 13px 22px;
       border: none;
       border-radius: 5px;
       font-weight: bold;
       cursor: pointer;
+      font-size: 1rem;
     }
 
+    .contact-detail {
+      font-size: 1.05rem;
+      margin: 10px 0;
+    }
+
+    .instagram {
+      display: inline-block;
+      margin-top: 12px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    /* FAQ */
+    details {
+      border-bottom: 1px solid var(--border);
+      padding: 17px 0;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--purple-dark);
+    }
+
+    /* FOOTER */
     footer {
-      background: #5b2d8b;
+      background: #2d173f;
       color: #fff;
+      padding: 35px 20px;
       text-align: center;
-      padding: 20px;
+    }
+
+    footer a { color: #fff; }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin: 12px 0;
+    }
+
+    @media (max-width: 800px) {
+      .nav-inner { flex-direction: column; }
+      .nav-links { justify-content: center; }
+      .feature, .contact-grid, .about-grid { grid-template-columns: 1fr; }
+      .hero { min-height: 500px; }
+    }
+
+    @media (max-width: 560px) {
+      .container { width: min(100% - 28px, 1100px); }
+      section { padding: 52px 14px; }
+      .hero { padding: 60px 14px; }
+      .hero h1 { font-size: 2.35rem; }
+      .situation { grid-template-columns: 1fr; }
+      .arrow { white-space: normal; }
     }
   </style>
 </head>
+
 <body>
 
-<header>
+<nav>
+  <div class="nav-inner">
+    <a class="brand" href="#top">Gregory Appraisals, LLC</a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#who-we-serve">Who We Serve</a>
+      <a href="#about">About</a>
+      <a href="#faq">FAQ</a>
+      <a class="nav-cta" href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header id="top">
   <div class="hero">
-    <div>
-      <h1>Gregory Appraisals, LLC</h1>
-      <p class="subtitle">Certified General Real Property Appraiser | Georgia</p>
-      <p class="tagline">Commercial • Residential • Eminent Domain • Complex Assignments</p>
-      <p class="phone">📞 Call/Text: 678-250-5244</p>
+    <div class="hero-content">
+      <span class="eyebrow">Independent Real Property Valuation | Georgia</span>
+      <h1>Real Estate Value That Holds Up Under Scrutiny.</h1>
+      <p class="subtitle">
+        Independent real property valuation for attorneys, fiduciaries, government agencies,
+        property owners, and other professionals throughout Georgia.
+      </p>
+      <p class="tagline">
+        Commercial • Litigation • Estate • Eminent Domain • Tax Appeals • Complex Assignments
+      </p>
+      <div class="hero-buttons">
+        <a class="button primary" href="#contact">Request an Appraisal</a>
+        <a class="button secondary" href="tel:6782505244">Call / Text 678-250-5244</a>
+      </div>
     </div>
   </div>
 </header>
 
-<nav>
-  <a href="#about">About</a>
-  <a href="#services">Services</a>
-  <a href="#contact">Contact</a>
-</nav>
+<div class="credibility">
+  <div class="credibility-inner">
+    <span>Certified General Appraiser</span>
+    <span>Georgia</span>
+    <span>Commercial</span>
+    <span>Litigation</span>
+    <span>Estate & Fiduciary</span>
+    <span>Eminent Domain</span>
+  </div>
+</div>
 
-<section id="about">
-  <h2>About Gregory Appraisals</h2>
-  <p>
-    Gregory Appraisals, LLC is a Georgia-based appraisal firm providing independent, well-supported valuation services
-    for commercial, residential, and complex real estate assets. Since its founding in 2020, our firm has delivered trusted appraisal services with a focus on professionalism, compliance, and a unique perspective shaped by diverse industry experience.
-  </p>
-  <p>
-    Led by Shazidy Gregory, Certified General Real Property Appraiser, the firm serves attorneys,
-    lenders, government agencies, and private clients throughout the State of Georgia.
-  </p>
+<section id="who-we-serve" class="light-section">
+  <div class="container">
+    <div class="section-label">Who We Serve</div>
+    <h2>For Those Who Need More Than a Number.</h2>
+    <p class="section-intro">
+      Gregory Appraisals provides independent valuation support when real property value
+      affects a legal, financial, tax, estate, government, or property decision.
+    </p>
+
+    <div class="grid">
+      <div class="card"><span class="icon">⚖️</span><h3>Attorneys</h3><p>Litigation, estate matters, tax appeals, eminent domain, damages, and valuation support.</p></div>
+      <div class="card"><span class="icon">📊</span><h3>CPAs & Tax Professionals</h3><p>Estate, gift, date-of-death, charitable contribution, and other tax-related valuation needs.</p></div>
+      <div class="card"><span class="icon">📁</span><h3>Fiduciaries & Personal Representatives</h3><p>Probate, estate settlement, trusts, and other fiduciary-related real property valuations.</p></div>
+      <div class="card"><span class="icon">🏛️</span><h3>Government & Public Agencies</h3><p>Eminent domain, right-of-way, acquisition, and other public-sector valuation assignments.</p></div>
+      <div class="card"><span class="icon">🏠</span><h3>Property Owners</h3><p>Tax appeals, estate planning, property decisions, and independent opinions of value.</p></div>
+      <div class="card"><span class="icon">🏢</span><h3>Other Professionals</h3><p>Support for lenders, developers, investors, consultants, and other professionals requiring valuation expertise.</p></div>
+    </div>
+  </div>
 </section>
 
 <section id="services">
-  <h2>Appraisal Services</h2>
-  <div class="services">
-    <div class="card">
-      <h3>Commercial Appraisals</h3>
-      <p>Office, retail, industrial, mixed-use, and special-purpose properties.</p>
+  <div class="container">
+    <div class="section-label">What We Do</div>
+    <h2>Valuation Services</h2>
+    <p class="section-intro">
+      Assignments are tailored to the property, intended use, and client's specific valuation question.
+    </p>
+
+    <div class="grid">
+      <div class="card">
+        <span class="icon">🏢</span>
+        <h3>Commercial & Complex</h3>
+        <p>Office, retail, industrial, mixed-use, special-purpose, and other complex real property assignments.</p>
+      </div>
+      <div class="card">
+        <span class="icon">⚖️</span>
+        <h3>Litigation & Dispute</h3>
+        <p>Litigation support, property tax appeals, damages analysis, and valuation matters requiring independent analysis.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🏡</span>
+        <h3>Estate & Fiduciary</h3>
+        <p>Estate, probate, date-of-death, trust, gifting, and other fiduciary-related valuations.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🛣️</span>
+        <h3>Eminent Domain & Right-of-Way</h3>
+        <p>Partial acquisitions, before-and-after valuation, damages analysis, and related support.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🌳</span>
+        <h3>Land & Vacant Property</h3>
+        <p>Subdivision analysis, surplus land, development feasibility, and vacant land valuation.</p>
+      </div>
+      <div class="card">
+        <span class="icon">📋</span>
+        <h3>Consulting & Review</h3>
+        <p>Appraisal reviews, market analysis, and advisory services when a valuation question requires deeper analysis.</p>
+      </div>
     </div>
-    <div class="card">
-      <h3>Residential Appraisals</h3>
-      <p>Single-family, multi-family, estate, and private-use residential properties.</p>
-    </div>
-    <div class="card">
-      <h3>Eminent Domain & Right-of-Way</h3>
-      <p>Partial acquisitions, before-and-after valuations, and litigation support.</p>
-    </div>
-    <div class="card">
-      <h3>Land & Vacant Property</h3>
-      <p>Subdivision analysis, surplus land, and development feasibility.</p>
-    </div>
-    <div class="card">
-      <h3>Estate & Insurable Value</h3>
-      <p>Appraisals for estate planning, probate, and insurance purposes.</p>
-    </div>
-    <div class="card">
-      <h3>Consulting & Review</h3>
-      <p>Appraisal reviews, market analysis, and advisory services.</p>
+
+    <div class="cta">
+      <h2>Need support with an assignment?</h2>
+      <p>
+        Gregory Appraisals is available for complex assignments, overflow work,
+        second-appraiser support, consulting, and professional collaboration.
+      </p>
+      <a class="button primary" href="#contact">Discuss Your Assignment</a>
     </div>
   </div>
+</section>
 
-  <div class="cta">
-    <strong>Need assistance with overflow work or complex assignments?</strong>
-    <p>Available for collaboration, second-appraiser support, and consulting.</p>
+<section class="light-section">
+  <div class="container">
+    <div class="section-label">Real-World Valuation Needs</div>
+    <h2>When the Value Matters, Get an Independent Opinion.</h2>
+    <p class="section-intro">Start with the problem. We'll help identify the appropriate valuation service.</p>
+
+    <div>
+      <div class="situation">
+        <div><strong>“I need to establish the value of an estate.”</strong><span>Estate administration, probate, trust, and date-of-death valuation.</span></div>
+        <div class="arrow">Estate & Fiduciary →</div>
+      </div>
+      <div class="situation">
+        <div><strong>“I disagree with my property's tax assessment.”</strong><span>Independent market analysis and support for a property tax appeal.</span></div>
+        <div class="arrow">Tax Appeal →</div>
+      </div>
+      <div class="situation">
+        <div><strong>“My client is involved in litigation.”</strong><span>Independent valuation analysis prepared for the needs of the legal matter.</span></div>
+        <div class="arrow">Litigation Support →</div>
+      </div>
+      <div class="situation">
+        <div><strong>“My property is being acquired.”</strong><span>Valuation support for eminent domain and right-of-way matters.</span></div>
+        <div class="arrow">Eminent Domain / ROW →</div>
+      </div>
+      <div class="situation">
+        <div><strong>“I need a value for tax or planning purposes.”</strong><span>Estate, gift, charitable contribution, and other non-lending valuation needs.</span></div>
+        <div class="arrow">Fiduciary / Tax Valuation →</div>
+      </div>
+      <div class="situation">
+        <div><strong>“I need to understand what this property is actually worth.”</strong><span>Independent market-based valuation for commercial, residential, land, and complex property.</span></div>
+        <div class="arrow">Appraisal Services →</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-label">Why Gregory Appraisals</div>
+    <h2>A Valuation Approach Built Around the Assignment.</h2>
+    <div class="grid">
+      <div class="why-card"><h3>Independent</h3><p>Objective valuation without a stake in the outcome.</p></div>
+      <div class="why-card"><h3>Experienced</h3><p>Experience across residential, commercial, land, complex, and specialized assignments.</p></div>
+      <div class="why-card"><h3>Analytical</h3><p>Market data and valuation methodology are researched, analyzed, and reconciled rather than simply plugged into a form.</p></div>
+      <div class="why-card"><h3>Defensible</h3><p>Reports are prepared with the intended use and audience in mind, particularly when valuation may be questioned or challenged.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="light-section">
+  <div class="container feature">
+    <div>
+      <div class="section-label">For Attorneys</div>
+      <h2>Valuation Support When Real Property Value Becomes Part of a Legal Matter.</h2>
+      <p>
+        When an appraisal may be reviewed, challenged, or relied upon in a legal matter,
+        the analysis needs to do more than produce a number.
+      </p>
+      <p>
+        Gregory Appraisals provides independent valuation support for litigation,
+        property tax appeals, estate disputes, divorce/property division, eminent domain,
+        damages, and other valuation disputes.
+      </p>
+      <a class="button" style="background:var(--purple);color:#fff;border-color:var(--purple);" href="#contact">Discuss an Attorney Assignment</a>
+    </div>
+    <div class="feature-box">
+      <h3>Potential Legal-Matter Support</h3>
+      <ul>
+        <li>Litigation support</li>
+        <li>Property tax appeals</li>
+        <li>Estate disputes</li>
+        <li>Eminent domain & ROW</li>
+        <li>Damages analysis</li>
+        <li>Independent valuation opinions</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container feature">
+    <div class="feature-box">
+      <h3>Estate & Fiduciary Valuation</h3>
+      <p>
+        Real property value may be needed for estate administration, date-of-death valuation,
+        tax reporting, equitable distribution, gifting, and other planning or legal needs.
+      </p>
+      <p><strong>Estate • Probate • Trusts • Date of Death • Gifting</strong></p>
+    </div>
+    <div>
+      <div class="section-label">For Estates & Fiduciaries</div>
+      <h2>When an Estate Needs a Value, Accuracy Matters.</h2>
+      <p>
+        Gregory Appraisals provides independent real property valuation for fiduciaries,
+        personal representatives, attorneys, CPAs, and other professionals involved in estate matters.
+      </p>
+      <a class="button" style="background:var(--purple);color:#fff;border-color:var(--purple);" href="#contact">Discuss an Estate Assignment</a>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="light-section">
+  <div class="container">
+    <div class="section-label">Meet the Appraiser</div>
+    <h2>Shazidy Gregory</h2>
+    <p class="section-intro">
+      Shazidy Gregory is the founder of Gregory Appraisals, LLC and a Certified General
+      Real Property Appraiser serving clients throughout Georgia.
+    </p>
+    <p>
+      Her valuation experience includes commercial and residential real estate, land,
+      complex assignments, estate and fiduciary matters, eminent domain, and
+      litigation-related valuation.
+    </p>
+    <p>
+      Gregory Appraisals was founded with a simple objective: to provide clients with
+      independent, well-supported opinions of real property value that can be relied upon
+      when the valuation matters.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-label">How It Works</div>
+    <h2>A Clearer Appraisal Process.</h2>
+    <div class="grid">
+      <div class="card"><div class="step-number">01</div><h3>Tell Us About the Assignment</h3><p>Contact Gregory Appraisals and explain the property and what you need the valuation for.</p></div>
+      <div class="card"><div class="step-number">02</div><h3>We Determine the Scope</h3><p>We'll identify the appropriate assignment requirements, property information, and valuation scope.</p></div>
+      <div class="card"><div class="step-number">03</div><h3>Market Research & Analysis</h3><p>Relevant market data is researched, analyzed, and reconciled for the assignment.</p></div>
+      <div class="card"><div class="step-number">04</div><h3>Delivery</h3><p>You receive a clearly communicated opinion of value supported by the analysis appropriate for the assignment.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="light-section">
+  <div class="container">
+    <div class="section-label">Questions</div>
+    <h2>Frequently Asked Questions</h2>
+
+    <details><summary>What types of properties do you appraise?</summary><p>Gregory Appraisals handles residential, commercial, land, and complex real property assignments, subject to assignment scope and intended use.</p></details>
+    <details><summary>Do you work with attorneys?</summary><p>Yes. Gregory Appraisals provides valuation support for attorneys and legal matters, including litigation, estate matters, tax appeals, and eminent domain.</p></details>
+    <details><summary>Do you perform estate and date-of-death appraisals?</summary><p>Yes. Estate, probate, fiduciary, and date-of-death valuation needs are among the firm's non-lending services.</p></details>
+    <details><summary>Can you help with property tax appeals?</summary><p>Yes. Independent valuation analysis can be prepared for property owners and professionals evaluating a property tax appeal.</p></details>
+    <details><summary>Do you perform eminent domain appraisals?</summary><p>Yes. Gregory Appraisals provides valuation support for eminent domain and right-of-way matters, including partial acquisitions and before-and-after analysis.</p></details>
+    <details><summary>What geographic areas do you serve?</summary><p>Gregory Appraisals serves clients throughout Georgia. Contact the firm to discuss the property location and assignment requirements.</p></details>
   </div>
 </section>
 
 <section id="contact">
-  <h2>Contact</h2>
-  <p>
-    For appraisal inquiries, engagement requests, or professional collaboration, please submit the form below or call directly.
-  </p>
+  <div class="container">
+    <div class="section-label">Let's Talk</div>
+    <h2>Have a Valuation Question?</h2>
+    <div class="contact-grid">
+      <div>
+        <p>
+          Not every situation fits neatly into a service category. Whether you're an attorney
+          preparing for litigation, a fiduciary handling an estate, a property owner questioning
+          an assessment, or a professional who needs an independent valuation opinion, we're happy
+          to discuss your assignment.
+        </p>
 
-  <form action="https://formspree.io/f/xkjwjlwn" method="POST">
-  <input type="text" name="name" placeholder="Name" required />
+        <p class="contact-detail"><strong>Call/Text:</strong> <a href="tel:6782505244">678-250-5244</a></p>
+        <p class="contact-detail"><strong>Email:</strong> <a href="mailto:info@gregoryappraisals.com">info@gregoryappraisals.com</a></p>
+        <p class="contact-detail"><strong>Service Area:</strong> Statewide Georgia</p>
 
-  <input type="email" name="email" placeholder="Email" required />
+        <a class="instagram" href="https://www.instagram.com/gregoryappraisals/" target="_blank" rel="noopener noreferrer">◎ Follow Gregory Appraisals on Instagram</a>
+      </div>
 
-  <textarea name="message" rows="5" placeholder="Message" required></textarea>
-
-  <input type="hidden" name="_subject" value="New Gregory Appraisals Website Inquiry" />
-
-  <button type="submit">Send Message</button>
-</form>
-
-  <p style="margin-top:20px;">
-    <strong>Call/Text:</strong> 678-250-5244<br />
-    <strong>Email:</strong> <a href="mailto:info@gregoryappraisals.com">info@gregoryappraisals.com</a><br />
-    <strong>Service Area:</strong> Statewide Georgia
-  </p>
+      <form action="https://formspree.io/f/xkjwjlwn" method="POST">
+        <input type="text" name="name" placeholder="Name" required />
+        <input type="email" name="email" placeholder="Email" required />
+        <input type="tel" name="phone" placeholder="Phone (optional)" />
+        <input type="text" name="property_type" placeholder="Property Type (optional)" />
+        <textarea name="message" rows="6" placeholder="Tell us about the property and what you need the valuation for." required></textarea>
+        <input type="hidden" name="_subject" value="New Gregory Appraisals Website Inquiry" />
+        <button type="submit">Request an Appraisal</button>
+      </form>
+    </div>
+  </div>
 </section>
 
 <footer>
-  <p>&copy; 2025 Gregory Appraisals, LLC. All rights reserved.</p>
-  <p>USPAP Compliant | Certified General Real Property Appraiser</p>
+  <div class="container">
+    <strong>Gregory Appraisals, LLC</strong>
+    <p>Certified General Real Property Appraiser | Georgia</p>
+
+    <div class="footer-links">
+      <a href="#services">Services</a>
+      <a href="#who-we-serve">Who We Serve</a>
+      <a href="#about">About</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <p>
+      Call/Text: <a href="tel:6782505244">678-250-5244</a> |
+      <a href="mailto:info@gregoryappraisals.com">info@gregoryappraisals.com</a>
+    </p>
+
+    <p>&copy; 2025 Gregory Appraisals, LLC. All rights reserved.</p>
+    <p>USPAP Compliant | Certified General Real Property Appraiser</p>
+  </div>
 </footer>
 
 </body>
